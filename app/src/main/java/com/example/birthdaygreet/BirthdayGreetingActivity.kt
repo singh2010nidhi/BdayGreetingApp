@@ -19,8 +19,8 @@ class BirthdayGreetingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_birthday_greeting)
 
-        val name = intent.getStringExtra(NAME_EXTRA)
-        //val birthdayGreeting:  =findViewById(R.id.birthdayGreeting)
+        //val name = intent.getStringExtra(NAME_EXTRA)
+        //val birthdayGreeting:  = findViewById(R.id.birthdayGreeting)
         //R.id.birthdayGreeting.EditText = "Happy Birthday $name"
 
         // Get the Intent that started this activity and extract the string
