@@ -12,8 +12,11 @@ import android.widget.TextView
 class BirthdayGreetingActivity : AppCompatActivity() {
 
     companion object {
-        const val NAME_EXTRA = "name_extra"
+        const val NAME_EXTRA1 = "name_extra"
+        const val NAME_EXTRA2 = "name_extra"
     }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,9 +27,15 @@ class BirthdayGreetingActivity : AppCompatActivity() {
         //R.id.birthdayGreeting.EditText = "Happy Birthday $name"
 
         // Get the Intent that started this activity and extract the string
-        val message = intent.getStringExtra(NAME_EXTRA)
+        val toName = intent.getStringExtra(NAME_EXTRA1)
+        val fromName = intent.getStringExtra(NAME_EXTRA2)
 
+        println(NAME_EXTRA1)
+        println("here")
+        println(NAME_EXTRA2)
         // Capture the layout's TextView and set the string as its text
-        val birthdayGreeting = findViewById<TextView>(R.id.birthdayGreeting).apply { text = "Happy Birthday\n$message!" }
+        val birthdayGreeting = findViewById<TextView>(R.id.birthdayGreeting).apply { text = "Happy Birthday\n$toName\nFrom\n$fromName!" }
+        // Capture the layout's TextView and set the string as its text
+        //val birthdayGreeting = findViewById<TextView>(R.id.birthdayGreeting).apply { text = "From\n$fromName!" }
     }
 }
