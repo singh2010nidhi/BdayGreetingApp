@@ -1,41 +1,30 @@
 package com.example.birthdaygreet
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-import android.content.Intent
-import android.view.View
-import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 
 class BirthdayGreetingActivity : AppCompatActivity() {
 
     companion object {
-        const val NAME_EXTRA1 = "name_extra"
-        const val NAME_EXTRA2 = "name_extra"
+        const val name1 = "name_extra"
+        const val name2 = "name_extra"
     }
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_birthday_greeting)
 
-        //val name = intent.getStringExtra(NAME_EXTRA)
-        //val birthdayGreeting:  = findViewById(R.id.birthdayGreeting)
-        //R.id.birthdayGreeting.EditText = "Happy Birthday $name"
-
         // Get the Intent that started this activity and extract the string
-        val toName = intent.getStringExtra(NAME_EXTRA1)
-        val fromName = intent.getStringExtra(NAME_EXTRA2)
 
-        println(NAME_EXTRA1)
-        println("here")
-        println(NAME_EXTRA2)
+        val bundle = intent.extras
+        val toName = bundle?.getString("name1")
+        val fromName = bundle?.getString("name2")
+
+
         // Capture the layout's TextView and set the string as its text
-        val birthdayGreeting = findViewById<TextView>(R.id.birthdayGreeting).apply { text = "Happy Birthday\n$toName\nFrom\n$fromName!" }
-        // Capture the layout's TextView and set the string as its text
-        //val birthdayGreeting = findViewById<TextView>(R.id.birthdayGreeting).apply { text = "From\n$fromName!" }
+        val birthdayGreeting = findViewById<TextView>(R.id.birthdayGreeting).apply { text = "Happy Birthday\n $toName \n from $fromName!" }
     }
 }
